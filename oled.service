@@ -1,0 +1,12 @@
+[Unit]
+Description=OLED startup info
+
+After=systemd-networkd-wait-online.service
+Wants=systemd-networkd-wait-online.service
+
+[Service]
+
+ExecStart=/usr/bin/python /utils/oled.py
+
+[Install]
+WantedBy=multi-user.target
